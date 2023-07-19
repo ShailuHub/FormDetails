@@ -17,9 +17,7 @@ function storeData(event) {
     date: date,
     time: time,
   };
-  const key = Object.keys(detail);
-  const value = Object.values(detail);
-  for (let i = 0; i < key.length; ++i) {
-    localStorage.setItem(key[i], value[i]);
-  }
+  const key = detail.name;
+  const value = JSON.stringify(detail);
+  localStorage.setItem(key, value);
 }
