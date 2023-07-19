@@ -20,4 +20,10 @@ function storeData(event) {
   const key = detail.name;
   const value = JSON.stringify(detail);
   localStorage.setItem(key, value);
+  const deserialise_value = JSON.parse(localStorage.getItem(key));
+  const listItem = document.querySelector(".allItems");
+  const newList = document.createElement("li");
+  const text = `Name: ${deserialise_value.name}, Email: ${deserialise_value.email}, Phone: ${deserialise_value.phone}`;
+  newList.appendChild(document.createTextNode(text));
+  listItem.appendChild(newList);
 }
